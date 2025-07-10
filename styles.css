@@ -1,0 +1,78 @@
+@import url(./basic-styles.css);
+
+.header-container {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 167%;
+  letter-spacing: 0.02em;
+  color: var(--txt-orange);
+}
+
+.post-list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.post {
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: rgba(47, 47, 55, 0.4);
+  padding: 12px 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.post-subtitle {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0.03em;
+  color: var(--txt-white);
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .post-list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "first second" "first third";
+  }
+  .post:first-child {
+    grid-area: first;
+  }
+  .post:nth-child(2) {
+    grid-area: second;
+  }
+  .post:nth-child(3) {
+    grid-area: third;
+  }
+  .overlay {
+    padding: 10px 20px;
+  }
+  .post-subtitle {
+    font-size: 20px;
+    line-height: 140%;
+  }
+}
