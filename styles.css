@@ -50,15 +50,16 @@
 }
 
 /* _______ ARTICLES _______*/
+
 .articles {
   display: grid;
   gap: 96px;
+  margin-bottom: 96px;
 }
 
 .articles-list {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
   gap: 48px;
 }
 
@@ -67,6 +68,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
 }
+
 .article-tytle {
   margin-bottom: 12px;
   font-family: var(--font-family);
@@ -76,6 +78,7 @@
   letter-spacing: 0.03em;
   color: var(--txt-black);
 }
+
 .article-txt {
   font-family: var(--font-family);
   font-weight: 400;
@@ -103,46 +106,48 @@
 .social-networks-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
   grid-template-areas: "inst fb" "yt tt" "gh tw";
   row-gap: 24px;
   column-gap: 8px;
 }
+
 .social-item {
   border-radius: 16px;
-  padding: 8px 32px 8px 8px;
+  padding: 8px;
   display: grid;
   grid-template-columns: 32px 1fr;
   gap: 16px;
   align-items: center;
 }
+
 .social-instagram {
   grid-area: inst;
   background-color: var(--navy);
 }
+
 .social-youtube {
   grid-area: yt;
-
   background-color: var(--peach);
 }
+
 .social-github {
   grid-area: gh;
-
   background-color: var(--light-yellow);
 }
+
 .social-facebook {
   grid-area: fb;
-
   background-color: var(--pink);
 }
+
 .social-tiktok {
   grid-area: tt;
-
   background-color: var(--light-green);
 }
+
 .social-twitter {
   grid-area: tw;
-
   background-color: var(--lila);
 }
 
@@ -153,6 +158,16 @@
   line-height: 150%;
   letter-spacing: 0.03em;
   color: var(--txt-gray);
+}
+
+.video-wrapper {
+  position: relative;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 27%;
+  left: 42%;
 }
 
 @media (min-width: 768px) {
@@ -183,5 +198,29 @@
   .post-subtitle {
     font-size: 20px;
     line-height: 140%;
+  }
+
+  /* _______ ARTICLES _______*/
+
+  .articles-list {
+    grid-template-rows: repeat(4, auto);
+    gap: 36px;
+  }
+
+  .article {
+    grid-template-columns: 288px 1fr;
+    gap: 24px;
+  }
+
+  .article-tytle {
+    font-size: 20px;
+    line-height: 140%;
+  }
+  .social-networks-list {
+    gap: 24px;
+  }
+  .likes {
+    display: grid;
+    justify-content: center;
   }
 }
